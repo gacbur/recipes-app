@@ -1,0 +1,111 @@
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px lightgrey solid;
+}
+
+.navbar__btn-cnt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: .9;
+      -ms-flex-positive: .9;
+          flex-grow: .9;
+  min-height: 5em;
+}
+
+.navbar__btn-cnt button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 2em;
+  cursor: pointer;
+  background: none;
+  border: none;
+  -webkit-transition: .25s;
+  transition: .25s;
+  width: 60px;
+  height: 60px;
+}
+
+.navbar__btn-cnt button :hover {
+  color: #3b3b3b;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.navbar__btn-cnt button i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 35px;
+}
+
+.navbar__logo-cnt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-family: "Roboto", sans-serif;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 5em;
+}
+
+.navbar__logo-cnt a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0em 4em;
+  color: #fc8618;
+  font-size: 30px;
+}
+
+.navbar__socials-cnt {
+  padding-right: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Roboto", sans-serif;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-flex: .8;
+      -ms-flex-positive: .8;
+          flex-grow: .8;
+  min-height: 5em;
+}
+
+.navbar__socials-cnt h5 {
+  margin-right: .4em;
+}
+
+.navbar__socials-cnt a {
+  color: #fc8618;
+  font-size: 30px;
+}
+/*# sourceMappingURL=Navbar.css.map */
