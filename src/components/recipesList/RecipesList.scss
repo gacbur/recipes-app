@@ -1,0 +1,13 @@
+.recipes-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding:2em 0em; 
+    outline:1px solid red;
+}
+
+.recipes-list__items-cnt{
+    width:90%;
+    max-width:950px;
+    outline:1px solid blue;
+}

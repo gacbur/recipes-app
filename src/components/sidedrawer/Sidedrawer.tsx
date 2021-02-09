@@ -25,7 +25,7 @@ const Sidedrawer: FC<SidedrawerProps> = ({ show, setShow }) => {
                 <li><Link to="/">FIND RECIPES!</Link></li>
                 <li><Link to="/pinned">PINNED</Link></li>
                 <li><Link to="/done">DONE</Link></li>
-                <li><Link to="/favourites">FAVOURITES</Link></li>
+                <li><Link to="/favorites">FAVORITES</Link></li>
             </ul>
             <div className="sidedrawer__socials">
                 <h4>Follow foodies!</h4>

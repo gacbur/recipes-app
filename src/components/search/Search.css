@@ -40,6 +40,8 @@
       -ms-flex-align: center;
           align-items: center;
   width: 90%;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   max-width: 600px;
   height: 60px;
 }

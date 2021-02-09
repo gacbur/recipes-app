@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAA;EACT,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,OAAO,EAAC,OAAO;EACf,OAAO,EAAC,aAAa;CACxB;;AAED,AAAA,wBAAwB,CAAA;EACpB,KAAK,EAAC,GAAG;EACT,SAAS,EAAC,KAAK;EACf,OAAO,EAAC,cAAc;CACzB",
+    "sources": [
+        "RecipesList.scss"
+    ],
+    "names": [],
+    "file": "RecipesList.css"
+}
