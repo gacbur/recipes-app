@@ -1,0 +1,136 @@
+@import '../../variables.scss';
+
+.recipe-item{
+    position: relative;
+    min-width: 250px;
+    transition: .3s;
+    margin:.8em;
+    font-size: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+
+    &:hover{
+        transform: scale(1.02);
+        transition: .3s;
+    }
+
+    &:hover .recepie-item__overlay{
+      visibility: visible;
+      opacity: 1;
+  }
+
+    &__img{
+        width: 100%;
+    }
+
+    img{
+        width:100%;
+        max-height: 400px;
+        display: block;
+    }
+}
+
+.recepie-item__overlay{
+  position: absolute;
+  color:white;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  width: 100%;
+  background-color: rgba(0,0,0,0.6);
+  height: 100%;
+  font-family: $font-two;
+  top:0px;
+  left:0px;
+
+  h6{
+    margin-top:25px;  
+    min-height: 50px;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid $first-color;
+    margin: .2em .8em;
+    padding:.5em 0em;
+    text-align: center;
+    font-size: .8em;
+  }
+
+    a{
+      text-decoration: none;
+      color: white;
+      padding-bottom: .1em;
+      border-bottom: 2px solid $second-color;
+
+      :hover{
+        background-color: $third-color-hover;
+      }
+
+      button{
+        cursor: pointer;
+        color:white;
+        display: flex;
+        margin: 0 auto;
+        border: none;
+        box-shadow: 0 2px 8px rgba(255,255,255,0.7);
+        text-align: center;
+        justify-content: center;
+        margin-top: 2em;
+        font-family: $font-two;
+        font-weight: 700;
+        background-color: $third-color;
+        font-size: 21px;
+        padding:.9em 1.4em;
+    }
+  }
+}
+
+@media all and (max-width: 1500px) {
+    .recipe-item {
+      width: 380px;
+    }
+  }
+  
+  @media all and (max-width: 1335px) {
+    .recipe-item {
+      width: 360px;
+    }
+  }
+  
+  @media all and (max-width: 1290px) {
+    .recipe-item {
+      width: 440px;
+    }
+  }
+  
+  @media all and (max-width: 1160px) {
+    .recipe-item {
+      width: 430px;
+      }
+  }
+  
+  @media all and (max-width: 1000px) {
+    .recipe-item {
+      width: 380px;
+    }
+  }
+  
+  @media all and (max-width: 900px) {
+    .recipe-item {
+      width: 330px;
+    }
+  }
+  
+  @media all and (max-width: 800px) {
+    .recipe-item {
+      width: 310px;
+    }
+  }
+  
+  @media all and (max-width: 750px) {
+    .recipe-item {
+      width: 430px;
+    }
+  }
+  
+
+

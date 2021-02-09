@@ -7,12 +7,38 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding: 2em 0em;
-  outline: 1px solid red;
 }
 
 .recipes-list__items-cnt {
   width: 90%;
-  max-width: 950px;
-  outline: 1px solid blue;
+  max-width: 1350px;
+  margin-top: 3em;
+  padding: 2em 0em;
+  justify-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
+@media all and (max-width: 1500px) {
+  .recipes-list__items-cnt {
+    -ms-grid-columns: (auto)[3];
+        grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media all and (max-width: 1290px) {
+  .recipes-list__items-cnt {
+    -ms-grid-columns: (auto)[2];
+        grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media all and (max-width: 750px) {
+  .recipes-list__items-cnt {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 /*# sourceMappingURL=RecipesList.css.map */
