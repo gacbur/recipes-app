@@ -6,6 +6,7 @@ import Home from '../../pages/home/Home'
 import Pinned from '../../pages/pinned/Pinned'
 import Done from '../../pages/done/Done'
 import Favorites from '../../pages/favorites/Favorites'
+import SingleRecipe from '../../pages/singleRecipe/SingleRecipe'
 
 import './Main.css'
 
@@ -17,6 +18,7 @@ const Main = () => {
                 <Route path="/pinned" exact component={Pinned} />
                 <Route path="/done" exact component={Done} />
                 <Route path="/favorites" exact component={Favorites} />
+                <Route path="/recipe/:id" exact component={SingleRecipe} />
             </Switch>
         </div>
     )

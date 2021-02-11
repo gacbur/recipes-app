@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+
+import Axios from 'axios'
 
 import { useDispatch } from 'react-redux'
 
 import { getRecipes, recipesLoaded, recipesNotLoaded } from '../../redux/actions/recipesActions'
 
-import Axios from 'axios'
-
 import { FaSearch } from 'react-icons/fa'
 
 import './Search.css'
 
-
 const Search = () => {
-
     const [searchValue, setSearchValue] = useState("")
     const [searchEmpty, setSearchEmpty] = useState(false)
     const dispatch = useDispatch()
@@ -29,7 +27,7 @@ const Search = () => {
 
     const getSearchResults = (searchValue: string) => {
         dispatch(recipesNotLoaded())
-        Axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${searchValue}&apiKey=1b963f2652e840bf91a018bc55244636`)
+        Axios.get(`${process.env.REACT_APP_API_URL}/recipes/complexSearch?query=${searchValue}&apiKey=${process.env.REACT_APP_API_KEY}`)
             .then(results => results.data.results)
             .then(recipes => {
                 dispatch(getRecipes(recipes))

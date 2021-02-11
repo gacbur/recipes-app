@@ -1,0 +1,135 @@
+@import '../../variables.scss';
+
+.single-recipe{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:2em 0em;
+
+    &__header{
+        margin-top: 4em;
+        padding:2em 0em;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        width:92%;
+        max-width: 1000px;
+    }
+
+    &__actions{
+        display: flex;
+        width:80%;
+        justify-content: center;
+        padding:4em 0em;
+        border-bottom: 1px solid darkgray;
+    
+            a{
+                margin:0em .5em;
+            }
+    
+            button{
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width:70px;
+                height: 70px;
+                background-color: $first-color;
+                border: 3px solid $third-color;
+                transition: .25s;
+                font-size: 38px;
+            
+            }
+    
+            button:hover{
+                background-color: $third-color; 
+                color:$first-color;
+                transition: .25s;
+                
+            }
+       }
+
+       &__content{
+        margin-top: 3em;
+        font-family: $font-two;
+        width:85%;
+        outline: 1px solid red;
+        padding:2em;
+
+        h3{
+           margin-left: 7em; 
+           line-height: 1.7em;
+        }
+    }
+
+    .header__frame{
+        width:50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: $second-color;
+        margin-left: 1%;
+        outline: 3px solid white;
+        outline-offset: -15px;
+  
+        div{
+            padding:1.5em 2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: $first-color;
+            width: 220px;
+            text-align: center;
+            outline: 1px solid $third-color;
+            outline-offset: -15px;
+
+            h2, h3, h4{
+                font-family: $font-two;
+                line-height: 1.5em;
+            }
+        }  
+        
+        
+    }
+
+   .header__image{
+       box-shadow: 0 2px 8px rgba(0,0,0,.5);
+       position: relative;
+       outline: 3px solid white;
+       outline-offset: -15px;
+       width:50%;
+   }
+}
+
+
+@media all and (max-width: 800px){
+    
+    .single-recipe{
+    
+        &__header{
+            flex-direction: column;
+        }
+
+        &__content{
+            h3{
+               margin-left: 0em; 
+            }
+        }
+    
+        .header__frame{
+            margin-top:2em;
+            height: 300px;
+            width:100%;
+            margin-left: 0%;
+       }
+    
+       .header__image{
+            width:100%;
+       }
+    }
+
+}

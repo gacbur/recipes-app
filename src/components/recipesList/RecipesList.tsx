@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux'
 import Loading from '../loading/Loading'
 import RecipeItem from '../recipeItem/RecipeItem'
 
+import { GiKnifeFork } from 'react-icons/gi'
+
 import { RootStore } from '../../redux/Store'
 
 
@@ -17,6 +19,7 @@ const RecipesList = () => {
 
     return (
         <div className="recipes-list">
+            <h2>Choose from the great selection of recepies that foodies presents to you, just search for something in your interest and enjoy! </h2>
             {recipes_loaded === false ?
                 <Loading />
 

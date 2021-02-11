@@ -1,8 +1,22 @@
+@import '../../variables.scss';
+
 .recipes-list{
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding:2em 0em; 
+
+    h2{
+      border-bottom:1px solid darkgray;
+      padding: 2em 0em;
+      font-family: $font-two;
+      display: flex;
+      align-items: center;
+      max-width: 850px;
+      width:80%;
+      text-align: center;
+    }
 
     &__items-cnt{
         width:90%;

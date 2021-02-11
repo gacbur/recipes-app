@@ -22,7 +22,7 @@ const RecipeItem: FC<RecipeItemProps> = ({ id, image, title }) => {
                     <Link to={`/recipe/${id}`}>
                         <button>
                             View recepie
-                    </button>
+                         </button>
                     </Link>
                 </div>
             </div>

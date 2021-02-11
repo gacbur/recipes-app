@@ -4,7 +4,7 @@
   -webkit-transition: .3s;
   transition: .3s;
   margin: .8em;
-  font-size: 30px;
+  font-size: 26px;
   -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
@@ -49,6 +49,7 @@
 .recepie-item__overlay h6 {
   margin-top: 25px;
   min-height: 50px;
+  line-height: 23px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,18 +85,25 @@
   display: flex;
   margin: 0 auto;
   border: none;
-  -webkit-box-shadow: 0 2px 8px rgba(255, 255, 255, 0.7);
-          box-shadow: 0 2px 8px rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.9);
+          box-shadow: 0 1px 12px rgba(0, 0, 0, 0.9);
   text-align: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 2em;
+  margin-top: 1.7em;
   font-family: "Source Serif Pro", serif;
   font-weight: 700;
   background-color: #fc8618;
   font-size: 21px;
-  padding: .9em 1.4em;
+  padding: .8em 1.3em;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.recepie-item__overlay a button :hover {
+  -webkit-transition: .25s;
+  transition: .25s;
 }
 
 @media all and (max-width: 1500px) {
@@ -142,7 +150,35 @@
 
 @media all and (max-width: 750px) {
   .recipe-item {
-    width: 430px;
+    width: 360px;
+  }
+}
+
+@media all and (max-width: 460px) {
+  .recipe-item {
+    width: 290px;
+  }
+  .recepie-item__overlay a button {
+    margin-top: 1.5em;
+    font-size: 18px;
+    padding: .6em 1em;
+  }
+}
+
+@media all and (max-width: 350px) {
+  .recipe-item {
+    width: 240px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .recipe-item {
+    width: 210px;
+  }
+  .recepie-item__overlay a button {
+    margin-top: 1em;
+    font-size: 18px;
+    padding: .6em 1em;
   }
 }
 /*# sourceMappingURL=RecipeItem.css.map */

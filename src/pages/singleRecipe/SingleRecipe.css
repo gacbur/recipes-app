@@ -1,0 +1,169 @@
+.single-recipe {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 2em 0em;
+}
+
+.single-recipe__header {
+  margin-top: 4em;
+  padding: 2em 0em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 92%;
+  max-width: 1000px;
+}
+
+.single-recipe__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 4em 0em;
+  border-bottom: 1px solid darkgray;
+}
+
+.single-recipe__actions a {
+  margin: 0em .5em;
+}
+
+.single-recipe__actions button {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70px;
+  height: 70px;
+  background-color: #ffffff;
+  border: 3px solid #fc8618;
+  -webkit-transition: .25s;
+  transition: .25s;
+  font-size: 38px;
+}
+
+.single-recipe__actions button:hover {
+  background-color: #fc8618;
+  color: #ffffff;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.single-recipe__content {
+  margin-top: 3em;
+  font-family: "Source Serif Pro", serif;
+  width: 85%;
+  outline: 1px solid red;
+  padding: 2em;
+}
+
+.single-recipe__content h3 {
+  margin-left: 7em;
+  line-height: 1.7em;
+}
+
+.single-recipe .header__frame {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #2e2c2c;
+  margin-left: 1%;
+  outline: 3px solid white;
+  outline-offset: -15px;
+}
+
+.single-recipe .header__frame div {
+  padding: 1.5em 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ffffff;
+  width: 220px;
+  text-align: center;
+  outline: 1px solid #fc8618;
+  outline-offset: -15px;
+}
+
+.single-recipe .header__frame div h2, .single-recipe .header__frame div h3, .single-recipe .header__frame div h4 {
+  font-family: "Source Serif Pro", serif;
+  line-height: 1.5em;
+}
+
+.single-recipe .header__image {
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  position: relative;
+  outline: 3px solid white;
+  outline-offset: -15px;
+  width: 50%;
+}
+
+@media all and (max-width: 800px) {
+  .single-recipe__header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .single-recipe__content h3 {
+    margin-left: 0em;
+  }
+  .single-recipe .header__frame {
+    margin-top: 2em;
+    height: 300px;
+    width: 100%;
+    margin-left: 0%;
+  }
+  .single-recipe .header__image {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=SingleRecipe.css.map */
