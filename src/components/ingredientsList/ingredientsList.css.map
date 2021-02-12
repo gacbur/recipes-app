@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EACd,KAAK,EAAC,IAAI;EACV,UAAU,EAAE,kBAAkB;EAC9B,UAAU,EAAE,GAAG;EACf,OAAO,EAAC,OAAO;EACf,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,MAAM;CAYtB;;AAnBD,AASI,iBATa,CASb,EAAE,CAAA;EACE,aAAa,EAAE,GAAG;CACrB;;AAEA,AAAD,0BAAU,CAAA;EACN,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,SAAS,EAAE,IAAI;EACf,eAAe,EAAE,MAAM;CAC1B",
+    "sources": [
+        "ingredientsList.scss"
+    ],
+    "names": [],
+    "file": "ingredientsList.css"
+}

@@ -60,13 +60,14 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   background-color: #ffffff;
   border: 3px solid #fc8618;
   -webkit-transition: .25s;
   transition: .25s;
-  font-size: 38px;
+  font-size: 30px;
+  border-radius: 50em;
 }
 
 .single-recipe__actions button:hover {
@@ -77,11 +78,11 @@
 }
 
 .single-recipe__content {
-  margin-top: 3em;
+  margin-top: 2em;
   font-family: "Source Serif Pro", serif;
   width: 85%;
-  outline: 1px solid red;
   padding: 2em;
+  border-bottom: 1px solid darkgray;
 }
 
 .single-recipe__content h3 {

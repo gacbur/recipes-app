@@ -12,6 +12,15 @@ export type ingredientItem = {
     name: string
 }
 
+export type ingredientItemInfo = {
+    image: string,
+    name: string
+    measureUS_amount: number,
+    measureUS_unit: string,
+    measureMetric_amount: number
+    measureMetric_unit: string
+}
+
 export type instructionsStep = {
     number: string,
     step: string,
@@ -30,6 +39,7 @@ export type singleRecipe = {
     vegan: boolean,
     vegetarian: boolean,
     instructions: instructionsStep[]
+    ingredientsInfo: ingredientItemInfo[]
 }
 
 export type recipeLoaded = {

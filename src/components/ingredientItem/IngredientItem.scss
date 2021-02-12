@@ -1,0 +1,13 @@
+.list__content__item{
+    width:110px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 110px;
+    margin:.4em;
+
+    img{
+        min-height: 80px;
+        max-width: 100px;
+    }
+}

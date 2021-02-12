@@ -34,13 +34,13 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width:70px;
-                height: 70px;
+                width:60px;
+                height: 60px;
                 background-color: $first-color;
                 border: 3px solid $third-color;
                 transition: .25s;
-                font-size: 38px;
-            
+                font-size: 30px;
+                border-radius: 50em;
             }
     
             button:hover{
@@ -52,11 +52,11 @@
        }
 
        &__content{
-        margin-top: 3em;
+        margin-top: 2em;
         font-family: $font-two;
         width:85%;
-        outline: 1px solid red;
         padding:2em;
+        border-bottom: 1px solid darkgray;
 
         h3{
            margin-left: 7em; 

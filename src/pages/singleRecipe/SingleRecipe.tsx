@@ -13,6 +13,7 @@ import { getSingleRecipe, singleRecipeLoaded, SingleRecipeNotLoaded } from '../.
 import { instructionsStep, equipmentItem, ingredientItem } from '../../redux/actions/singleRecipeActionTypes'
 
 import Loading from '../../components/loading/Loading'
+import IngredientsList from '../../components/ingredientsList/IngredientsList'
 
 import './SingleRecipe.css'
 
@@ -68,6 +69,16 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                                     }
                                 })
                             }
+                        }),
+                        ingredientsInfo: data.extendedIngredients.map((item: any) => {
+                            return {
+                                image: item.image,
+                                name: item.name,
+                                measureUS_amount: item.measures.metric.amount,
+                                measureUS_unit: item.measures.metric.unitShort,
+                                measureMetric_amount: item.measures.us.amount,
+                                measureMetric_unit: item.measures.us.unitShort
+                            }
                         })
                     }
                     dispatch(getSingleRecipe(singleRecipe))
@@ -108,6 +119,7 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                         <h3>Servings: {single_recipe.servings}</h3>
                         <h3>Vegan: {single_recipe.vegan ? 'Yes' : 'No'}</h3>
                         <h3>Vegetarian: {single_recipe.vegetarian ? 'Yes' : 'No'}</h3>
+                        <IngredientsList />
                     </div>
                 </>
                 :
