@@ -18,6 +18,12 @@ const IngredientsList = () => {
     return (
         <div className='ingredients-list'>
             <h2>Ingredients</h2>
+            <select
+                value={measuresType}
+                onChange={(e) => setMeasuresType(e.target.value)}>
+                <option value="metric">metric</option>
+                <option value="us">us</option>
+            </select>
             <div className="ingredients-list__content">
                 {single_recipe && single_recipe?.ingredientsInfo.map(item => (
                     <IngredientItem
@@ -27,6 +33,7 @@ const IngredientsList = () => {
                         measureUS_amount={item.measureUS_amount}
                         measureUS_unit={item.measureUS_unit}
                         measureMetric_amount={item.measureMetric_amount} measureMetric_unit={item.measureMetric_unit}
+                        measuresType={measuresType}
                     />
                 ))}
             </div>

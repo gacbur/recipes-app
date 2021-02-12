@@ -78,15 +78,15 @@
 }
 
 .single-recipe__content {
-  margin-top: 2em;
+  margin-top: 1.5em;
   font-family: "Source Serif Pro", serif;
   width: 85%;
   padding: 2em;
-  border-bottom: 1px solid darkgray;
 }
 
 .single-recipe__content h3 {
-  margin-left: 7em;
+  margin-left: 3em;
+  font-size: 15px;
   line-height: 1.7em;
 }
 

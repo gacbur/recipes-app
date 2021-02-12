@@ -14,6 +14,7 @@ import { instructionsStep, equipmentItem, ingredientItem } from '../../redux/act
 
 import Loading from '../../components/loading/Loading'
 import IngredientsList from '../../components/ingredientsList/IngredientsList'
+import RecipePreparation from '../../components/recipePreparation/RecipePreparation'
 
 import './SingleRecipe.css'
 
@@ -120,6 +121,7 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                         <h3>Vegan: {single_recipe.vegan ? 'Yes' : 'No'}</h3>
                         <h3>Vegetarian: {single_recipe.vegetarian ? 'Yes' : 'No'}</h3>
                         <IngredientsList />
+                        <RecipePreparation />
                     </div>
                 </>
                 :
