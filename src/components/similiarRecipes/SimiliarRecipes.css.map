@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,iBAAiB,CAAA;EACb,UAAU,EAAC,GAAG;EACd,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,MAAM;EACnB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;CAYhB;;AAlBD,AAQI,iBARa,CAQb,EAAE,CAAA;EACE,MAAM,EAAC,KAAK;CACf;;AAED,AAAD,0BAAU,CAAA;EACT,KAAK,EAAC,IAAI;EACV,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,MAAM;CAClB",
+    "sources": [
+        "SimiliarRecipes.scss",
+        "../../variables.scss"
+    ],
+    "names": [],
+    "file": "SimiliarRecipes.css"
+}

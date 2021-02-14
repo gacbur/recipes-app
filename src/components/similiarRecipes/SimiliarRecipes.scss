@@ -1,0 +1,21 @@
+@import '../../variables.scss';
+
+.similiar-recipes{
+    margin-top:3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+
+    h2{
+        margin:1.6em;
+    }
+
+   &__content{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+} 

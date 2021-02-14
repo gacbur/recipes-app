@@ -10,11 +10,12 @@ import { RouteComponentProps, withRouter } from 'react-router';
 
 import { RootStore } from '../../redux/Store'
 import { getSingleRecipe, singleRecipeLoaded, SingleRecipeNotLoaded } from '../../redux/actions/singleRecipeActions'
-import { instructionsStep, equipmentItem, ingredientItem } from '../../redux/actions/singleRecipeActionTypes'
+import { instructionsStep, equipmentItem, ingredientItem, singleRecipe } from '../../redux/actions/singleRecipeActionTypes'
 
 import Loading from '../../components/loading/Loading'
 import IngredientsList from '../../components/ingredientsList/IngredientsList'
 import RecipePreparation from '../../components/recipePreparation/RecipePreparation'
+import SimiliarRecipes from '../../components/similiarRecipes/SimiliarRecipes'
 
 import './SingleRecipe.css'
 
@@ -43,7 +44,7 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                 .then(result => result.data)
                 .then(data => {
                     console.log(data)
-                    const singleRecipe = {
+                    const singleRecipe: singleRecipe = {
                         id: data.id,
                         title: data.title,
                         image: data.image,
@@ -122,6 +123,7 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                         <h3>Vegetarian: {single_recipe.vegetarian ? 'Yes' : 'No'}</h3>
                         <IngredientsList />
                         <RecipePreparation />
+                        <SimiliarRecipes singleRecipeID={id} />
                     </div>
                 </>
                 :

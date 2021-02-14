@@ -1,0 +1,48 @@
+@import '../../variables.scss';
+
+.similiar-recipes__content__item{
+    min-height: 100px;
+    max-height: 150px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    margin: .6em 0em;
+    max-width: 500px;
+    transition: .25s;
+    outline:1px solid white;
+
+    &:hover{
+        background-color: $third-color-hover;
+        transition: .25s;
+        outline-offset: -7px;
+    }
+
+    &:hover h2{
+        color:$second-color;
+        transition: .25s;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+        padding:.4em 1em;
+        font-family: $font-one;
+        font-size: 12px;
+        height: 100%;
+        width: 100%;
+
+        h2{
+            margin:0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+}

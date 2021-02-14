@@ -42,6 +42,7 @@
         font-family: $font-two;
         justify-content: center;
         min-height: 5em;
+        padding-left: 4em;
     
         a{
             display: flex;
@@ -77,7 +78,7 @@
 
 
     .navbar__logo-cnt{
-        flex-grow: 1;
+        flex-grow: 1.1;
 
         a{
             padding:0em .7em;

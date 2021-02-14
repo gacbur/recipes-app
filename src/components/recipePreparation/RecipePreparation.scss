@@ -1,5 +1,4 @@
 .recipe-preparation{
-    outline:1px solid red;
     padding:1em 0em;
     width:100%;
     display: flex;
@@ -11,8 +10,9 @@
     }
 
     &__content{
-        width:90%;
-        outline:1px solid blue;
+        width:95%;
+        outline: 1px solid darkgray;
+        padding:2em;
     }
 }
 
