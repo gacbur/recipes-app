@@ -25,10 +25,6 @@
         padding:2.5em 0em;
         border-bottom: 1px solid darkgray;
     
-            a{
-                margin:0em .5em;
-            }
-    
             button{
                 cursor: pointer;
                 display: flex;
@@ -36,6 +32,7 @@
                 justify-content: center;
                 width:60px;
                 height: 60px;
+                margin:0em .3em;
                 background-color: $first-color;
                 border: 3px solid $third-color;
                 transition: .25s;
@@ -47,7 +44,6 @@
                 background-color: $third-color; 
                 color:$first-color;
                 transition: .25s;
-                
             }
        }
 
@@ -98,7 +94,6 @@
                 line-height: 1.5em;
             }
         }  
-        
         
     }
 

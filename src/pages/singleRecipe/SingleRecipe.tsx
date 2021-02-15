@@ -2,14 +2,14 @@ import { useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Link } from 'react-router-dom'
-
 import Axios from 'axios'
 
 import { RouteComponentProps, withRouter } from 'react-router';
 
 import { RootStore } from '../../redux/Store'
 import { getSingleRecipe, singleRecipeLoaded, SingleRecipeNotLoaded } from '../../redux/actions/singleRecipeActions'
+import { addToPinned } from '../../redux/actions/pinnedRecipesActions'
+
 import { instructionsStep, equipmentItem, ingredientItem, singleRecipe } from '../../redux/actions/singleRecipeActionTypes'
 
 import Loading from '../../components/loading/Loading'
@@ -19,7 +19,7 @@ import SimiliarRecipes from '../../components/similiarRecipes/SimiliarRecipes'
 
 import './SingleRecipe.css'
 
-import { GrPin } from 'react-icons/gr'
+import { RiPushpinLine } from 'react-icons/ri'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { ImCheckmark2 } from 'react-icons/im'
 
@@ -96,6 +96,22 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
 
     const recipe_loaded = useSelector((state: RootStore) => state.singleRecipe.recipe_loaded)
     const single_recipe = useSelector((state: RootStore) => state.singleRecipe.single_recipe)
+    console.log(single_recipe && single_recipe)
+
+    const handleActionButtons = (type: string) => {
+        if (single_recipe) {
+            const single_recipe_item = {
+                id: single_recipe.id,
+                title: single_recipe.title,
+                image: single_recipe.image
+            }
+            switch (type) {
+                case "pin":
+                    dispatch(addToPinned(single_recipe_item))
+                    break;
+            }
+        }
+    }
 
     return (
         <div className="single-recipe">
@@ -112,9 +128,11 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                         </div>
                     </div>
                     <div className="single-recipe__actions">
-                        <Link to="/"><button><GrPin /></button></Link>
-                        <Link to="/"><button><AiOutlineHeart /></button></Link>
-                        <Link to="/"><button><ImCheckmark2 /></button></Link>
+                        <button
+                            onClick={() => handleActionButtons("pin")}
+                        ><RiPushpinLine /></button>
+                        <button><AiOutlineHeart /></button>
+                        <button><ImCheckmark2 /></button>
                     </div>
                     <div className="single-recipe__content">
                         <h3>Time: {single_recipe.readyInMinutes} minutes</h3>

@@ -45,10 +45,6 @@
   border-bottom: 1px solid darkgray;
 }
 
-.single-recipe__actions a {
-  margin: 0em .5em;
-}
-
 .single-recipe__actions button {
   cursor: pointer;
   display: -webkit-box;
@@ -62,6 +58,7 @@
           justify-content: center;
   width: 60px;
   height: 60px;
+  margin: 0em .3em;
   background-color: #ffffff;
   border: 3px solid #fc8618;
   -webkit-transition: .25s;

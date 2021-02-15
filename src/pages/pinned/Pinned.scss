@@ -1,0 +1,48 @@
+@import '../../variables.scss';
+
+.pinned-recipes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    margin:2em 0em 8em 0em;
+
+    h2{
+        margin: 1em 0em;
+        padding:1em 4em; 
+        padding-bottom:1em;
+        font-family: $font-two;
+        border-bottom: 1px solid darkgray;
+    }
+
+    &__content{
+        width:90%;
+        max-width: 1050px;
+        justify-items: center;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__message{
+        font-family: $font-two;
+    }
+}
+
+@media all and (max-width: 1010px){
+    .pinned-recipes__content{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media all and (max-width: 830px){
+    .pinned-recipes__content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media all and (max-width: 660px){
+    .pinned-recipes__content{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

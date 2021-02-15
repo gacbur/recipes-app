@@ -1,0 +1,61 @@
+.pinned-recipes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 2em 0em 8em 0em;
+}
+
+.pinned-recipes h2 {
+  margin: 1em 0em;
+  padding: 1em 4em;
+  padding-bottom: 1em;
+  font-family: "Source Serif Pro", serif;
+  border-bottom: 1px solid darkgray;
+}
+
+.pinned-recipes__content {
+  width: 90%;
+  max-width: 1050px;
+  justify-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
+.pinned-recipes__message {
+  font-family: "Source Serif Pro", serif;
+}
+
+@media all and (max-width: 1010px) {
+  .pinned-recipes__content {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media all and (max-width: 830px) {
+  .pinned-recipes__content {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media all and (max-width: 660px) {
+  .pinned-recipes__content {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+/*# sourceMappingURL=Pinned.css.map */
