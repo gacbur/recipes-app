@@ -1,6 +1,6 @@
 @import '../../variables.scss';
 
-.pinned-recipe{
+.done-recipe{
     height: 250px;
     width:210px;
     margin:.8em 0em;
@@ -9,7 +9,7 @@
     box-shadow: 0 2px 11px rgba(0,0,0,.5);
     overflow: hidden;
 
-    &:hover a .pinned-recipe__overlay{
+    &:hover a .done-recipe__overlay{
         opacity:1;
         visibility: visible;
         transition: .25s ease;
@@ -31,7 +31,7 @@
         font-size: 17px;
         font-family: $font-two;
 
-        .pinned-recipe__overlay{
+        .done-recipe__overlay{
             opacity: 0;
             transition: .25s ease;
             visibility: hidden;
@@ -86,7 +86,7 @@
 }
 
 @media all and (max-width: 1010px){
-    .pinned-recipe{
+    .done-recipe{
         width:235px;
         height: 280px;
         &__text{
@@ -99,7 +99,7 @@
 }
 
 @media all and (max-width: 830px){
-    .pinned-recipe{
+    .done-recipe{
         width:270px;
         height: 300px;
    
@@ -113,7 +113,7 @@
 }
 
 @media all and (max-width: 660px){
-    .pinned-recipe{
+    .done-recipe{
         width:330px;
         height: 350px;
 

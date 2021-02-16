@@ -9,6 +9,7 @@ import { RouteComponentProps, withRouter } from 'react-router';
 import { RootStore } from '../../redux/Store'
 import { getSingleRecipe, singleRecipeLoaded, SingleRecipeNotLoaded } from '../../redux/actions/singleRecipeActions'
 import { addToPinned } from '../../redux/actions/pinnedRecipesActions'
+import { addToDone } from '../../redux/actions/doneRecipesActions'
 
 import { instructionsStep, equipmentItem, ingredientItem, singleRecipe } from '../../redux/actions/singleRecipeActionTypes'
 
@@ -109,6 +110,8 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                 case "pin":
                     dispatch(addToPinned(single_recipe_item))
                     break;
+                case 'done':
+                    dispatch(addToDone(single_recipe_item))
             }
         }
     }
@@ -132,7 +135,9 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                             onClick={() => handleActionButtons("pin")}
                         ><RiPushpinLine /></button>
                         <button><AiOutlineHeart /></button>
-                        <button><ImCheckmark2 /></button>
+                        <button
+                            onClick={() => handleActionButtons('done')}
+                        ><ImCheckmark2 /></button>
                     </div>
                     <div className="single-recipe__content">
                         <h3>Time: {single_recipe.readyInMinutes} minutes</h3>
