@@ -22,10 +22,10 @@ const Sidedrawer: FC<SidedrawerProps> = ({ show, setShow }) => {
             >
                 <i><CgClose style={{ color: 'white' }} /></i></button>
             <ul>
-                <li><Link to="/">FIND RECIPES!</Link></li>
-                <li><Link to="/pinned">PINNED</Link></li>
-                <li><Link to="/done">DONE</Link></li>
-                <li><Link to="/favorites">FAVORITES</Link></li>
+                <li><Link to="/" onClick={() => setShow(false)}>FIND RECIPES!</Link></li>
+                <li><Link to="/pinned" onClick={() => setShow(false)}>PINNED</Link></li>
+                <li><Link to="/done" onClick={() => setShow(false)}>DONE</Link></li>
+                <li><Link to="/favorites" onClick={() => setShow(false)}>FAVORITES</Link></li>
             </ul>
             <div className="sidedrawer__socials">
                 <h4>Follow foodies!</h4>
