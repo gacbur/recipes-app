@@ -10,6 +10,7 @@ import { RootStore } from '../../redux/Store'
 import { getSingleRecipe, singleRecipeLoaded, SingleRecipeNotLoaded } from '../../redux/actions/singleRecipeActions'
 import { addToPinned } from '../../redux/actions/pinnedRecipesActions'
 import { addToDone } from '../../redux/actions/doneRecipesActions'
+import { addToFavorites } from '../../redux/actions/favoriteRecipesActions'
 
 import { instructionsStep, equipmentItem, ingredientItem, singleRecipe } from '../../redux/actions/singleRecipeActionTypes'
 
@@ -112,6 +113,10 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                     break;
                 case 'done':
                     dispatch(addToDone(single_recipe_item))
+                    break;
+                case 'favorite':
+                    dispatch(addToFavorites(single_recipe_item))
+                    break;
             }
         }
     }
@@ -132,9 +137,11 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                     </div>
                     <div className="single-recipe__actions">
                         <button
-                            onClick={() => handleActionButtons("pin")}
+                            onClick={() => handleActionButtons('pin')}
                         ><RiPushpinLine /></button>
-                        <button><AiOutlineHeart /></button>
+                        <button
+                            onClick={() => handleActionButtons('favorite')}
+                        ><AiOutlineHeart /></button>
                         <button
                             onClick={() => handleActionButtons('done')}
                         ><ImCheckmark2 /></button>

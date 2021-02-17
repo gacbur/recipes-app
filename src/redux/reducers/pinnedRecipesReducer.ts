@@ -5,7 +5,7 @@ interface InitialStateI {
 }
 
 const initialState: InitialStateI = {
-    pinned_recipes: []
+    pinned_recipes: localStorage.getItem('pinnedRecipes') ? JSON.parse(localStorage.getItem('pinnedRecipes') || '{}') : []
 }
 
 const pinnedRecipesReducer = (state: InitialStateI = initialState, action: PinnedRecipesDispatchTypes) => {

@@ -6,7 +6,7 @@ interface InitialStateI {
 }
 
 const initialState: InitialStateI = {
-    favorite_recipes: []
+    favorite_recipes: localStorage.getItem('favoriteRecipes') ? JSON.parse(localStorage.getItem('favoriteRecipes') || '{}') : []
 }
 
 const favoriteRecipesReducer = (state: InitialStateI = initialState, action: FavoriteRecipesDispatchTypes): InitialStateI => {

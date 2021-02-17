@@ -108,6 +108,14 @@
 .navbar__socials-cnt a {
   color: #fc8618;
   font-size: 30px;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.navbar__socials-cnt a:hover {
+  color: #f59a45;
+  -webkit-transition: .25s;
+  transition: .25s;
 }
 
 @media all and (max-width: 768px) {

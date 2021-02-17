@@ -70,6 +70,12 @@
         a{
             color: $third-color;
             font-size: 30px;
+            transition: .25s;
+
+            &:hover{
+                color: $third-color-hover;
+                transition: .25s;
+            }
         }
     }
 }
