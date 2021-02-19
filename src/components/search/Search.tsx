@@ -46,7 +46,7 @@ const Search = () => {
                 <form onSubmit={(e) => handleSubmit(searchValue, e)}>
                     <input
                         value={searchValue}
-                        placeholder={searchEmpty ? 'Search cannot be empty...' : ''}
+                        placeholder={searchEmpty ? 'Search cannot be empty...' : 'example: pizza, spaghetti...'}
                         onChange={(e) => setSearchValue(e.target.value)}
                         type="text"
                     />

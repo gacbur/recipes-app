@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -18,6 +18,9 @@ import Loading from '../../components/loading/Loading'
 import IngredientsList from '../../components/ingredientsList/IngredientsList'
 import RecipePreparation from '../../components/recipePreparation/RecipePreparation'
 import SimiliarRecipes from '../../components/similiarRecipes/SimiliarRecipes'
+
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 import './SingleRecipe.css'
 
@@ -98,7 +101,10 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
 
     const recipe_loaded = useSelector((state: RootStore) => state.singleRecipe.recipe_loaded)
     const single_recipe = useSelector((state: RootStore) => state.singleRecipe.single_recipe)
-    console.log(single_recipe && single_recipe)
+
+    const pinned_recipes = useSelector((state: RootStore) => state.pinnedRecipes.pinned_recipes)
+    const done_recipes = useSelector((state: RootStore) => state.doneRecipes.done_recipes)
+    const favorite_recipes = useSelector((state: RootStore) => state.favoriteRecipes.favorite_recipes)
 
     const handleActionButtons = (type: string) => {
         if (single_recipe) {
@@ -109,13 +115,34 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
             }
             switch (type) {
                 case "pin":
-                    dispatch(addToPinned(single_recipe_item))
+                    const isInPinned = pinned_recipes.find(item => item.id === single_recipe_item.id)
+                    if (isInPinned) {
+                        toast.error("This recipe is already in Pinned.")
+                    }
+                    else {
+                        dispatch(addToPinned(single_recipe_item))
+                        toast.success("Recipe added to Pinned.")
+                    }
                     break;
                 case 'done':
-                    dispatch(addToDone(single_recipe_item))
+                    const isInDone = done_recipes.find(item => item.id === single_recipe_item.id)
+                    if (isInDone) {
+                        toast.error("This recipe is already in Completed.")
+                    }
+                    else {
+                        dispatch(addToDone(single_recipe_item))
+                        toast.success("Recipe added to Completed.")
+                    }
                     break;
                 case 'favorite':
-                    dispatch(addToFavorites(single_recipe_item))
+                    const isInFavorite = favorite_recipes.find(item => item.id === single_recipe_item.id)
+                    if (isInFavorite) {
+                        toast.error("This recipe is already in Favorite.")
+                    }
+                    else {
+                        dispatch(addToFavorites(single_recipe_item))
+                        toast.success("Recipe added to Favorite.")
+                    }
                     break;
             }
         }
@@ -123,8 +150,19 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
 
     return (
         <div className="single-recipe">
+
             {recipe_loaded && single_recipe ?
                 <>
+                    <ToastContainer
+                        position="top-right"
+                        autoClose={2000}
+                        hideProgressBar={true}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        draggable
+                        pauseOnHover
+                    />
                     <div className="single-recipe__header">
                         <img className="header__image" src={single_recipe.image} alt={single_recipe.title} />
                         <div className="header__frame">
@@ -158,7 +196,6 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                 </>
                 :
                 <Loading />}
-
         </div>
     )
 }

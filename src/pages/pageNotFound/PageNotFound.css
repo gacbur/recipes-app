@@ -1,0 +1,53 @@
+.page-not-found {
+  font-family: "Source Serif Pro", serif;
+  margin-top: 4em;
+}
+
+.page-not-found__button {
+  width: 100%;
+  margin-bottom: 3em;
+}
+
+.page-not-found__button button {
+  cursor: pointer;
+  margin-left: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: .2em 1em;
+  font-size: 34px;
+  border: 4px solid #fc8618;
+  background-color: white;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.page-not-found__button button:hover {
+  background-color: #fc8618;
+  color: white;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.page-not-found__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-not-found__text h1 {
+  margin-bottom: .5em;
+  font-size: 40px;
+}
+
+.page-not-found__text h2 {
+  font-size: 31px;
+}
+/*# sourceMappingURL=PageNotFound.css.map */

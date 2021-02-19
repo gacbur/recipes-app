@@ -13,6 +13,7 @@
           transform: translateX(-100%);
   -webkit-transition: .5s;
   transition: .5s;
+  visibility: hidden;
 }
 
 .sidedrawer button {
@@ -107,6 +108,7 @@
 }
 
 .sidedrawer.show {
+  visibility: visible;
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
   -webkit-transition: .5s;

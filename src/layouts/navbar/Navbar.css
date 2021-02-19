@@ -125,7 +125,7 @@
             flex-grow: 1.1;
   }
   .navbar__logo-cnt a {
-    padding: 0em .7em;
+    padding: 0em .3em;
   }
   .navbar__btn-cnt {
     -webkit-box-flex: 0;

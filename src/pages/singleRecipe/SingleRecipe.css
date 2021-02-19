@@ -17,6 +17,7 @@
 }
 
 .single-recipe__header {
+  position: relative;
   margin-top: 1em;
   padding: 1.5em 0em;
   display: -webkit-box;

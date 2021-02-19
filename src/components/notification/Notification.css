@@ -1,0 +1,50 @@
+.notification {
+  margin-top: 100px;
+  position: fixed;
+  z-index: 1000;
+  border-radius: 3px;
+  width: 300px;
+  background-color: #fc8618;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0px;
+}
+
+.notification button {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 17px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.notification button:hover {
+  color: #464646;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.notification h4 {
+  font-family: "Roboto", sans-serif;
+  display: block;
+  font-size: 14px;
+  padding: .5em 1em 0em 1em;
+}
+/*# sourceMappingURL=Notification.css.map */
