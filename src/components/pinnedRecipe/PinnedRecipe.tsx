@@ -6,9 +6,6 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import './PinnedRecipe.css'
 
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
-
 import { RootStore } from '../../redux/Store'
 
 import { recipe } from '../../redux/actions/pinnedRecipesActionTypes'
@@ -21,8 +18,13 @@ import { AiOutlineHeart } from 'react-icons/ai'
 import { CgClose } from 'react-icons/cg'
 import { ImCheckmark2 } from 'react-icons/im'
 
+import 'react-notifications/lib/notifications.css';
+
+// @ts-ignore
+import { NotificationManager } from 'react-notifications';
 
 const PinnedRecipe: React.FC<recipe> = ({ id, title, image }) => {
+
 
     const dispatch = useDispatch()
 
@@ -40,29 +42,29 @@ const PinnedRecipe: React.FC<recipe> = ({ id, title, image }) => {
             }
             switch (type) {
                 case 'remove-from-pinned':
-                    toast.success("Recipe successfully removed from Pinned.")
                     dispatch(removeFromPinned(single_recipe_item.id))
+                    NotificationManager.success("Recipe was successfully deleted from Pinned", '', 2000)
                     break;
                 case 'done':
                     const isInDone = done_recipes.find(item => item.id === single_recipe_item.id)
                     if (isInDone) {
-                        toast.error("This recipe is already in Completed.")
+                        NotificationManager.error("This recipe is already in Completed", '', 2000)
                     }
                     else {
                         dispatch(addToDone(single_recipe_item))
                         dispatch(removeFromPinned(single_recipe_item.id))
-                        toast.success("Recipe added to Completed.")
+                        NotificationManager.success("Recipe was successfully added to Completed", '', 2000)
                     }
                     break;
                 case 'favorite':
                     const isInFavorite = favorite_recipes.find(item => item.id === single_recipe_item.id)
                     if (isInFavorite) {
-                        toast.error("This recipe is already in Favorite.")
+                        NotificationManager.error("This recipe is already in Favorite", '', 2000)
                     }
                     else {
                         dispatch(addToFavorites(single_recipe_item))
                         dispatch(removeFromPinned(single_recipe_item.id))
-                        toast.success("Recipe added to Favorite.")
+                        NotificationManager.success("Recipe was successfully added to Favorite", '', 2000)
                     }
                     break;
             }
@@ -71,16 +73,6 @@ const PinnedRecipe: React.FC<recipe> = ({ id, title, image }) => {
 
     return (
         <>
-            <ToastContainer
-                position="top-right"
-                autoClose={2000}
-                hideProgressBar={true}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                draggable
-                pauseOnHover
-            />
             <div className="pinned-recipe">
                 <div className="pinned-recipe__image">
                     <Link to={`/recipe/${id}`}>

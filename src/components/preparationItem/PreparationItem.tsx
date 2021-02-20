@@ -1,5 +1,4 @@
 import React from 'react'
-import { IndexKind } from 'typescript'
 
 import { instructionsStep } from '../../redux/actions/singleRecipeActionTypes'
 

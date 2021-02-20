@@ -12,9 +12,17 @@ import { removeFromFavorites } from '../../redux/actions/favoriteRecipesActions'
 
 import { CgClose } from 'react-icons/cg'
 
+//@ts-ignore
+import { NotificationManager } from 'react-notifications'
+
 const PinnedRecipe: React.FC<recipe> = ({ id, title, image }) => {
 
     const dispatch = useDispatch()
+
+    const handleDeleteFromFavorite = (id: number) => {
+        dispatch(removeFromFavorites(id))
+        NotificationManager.success("Recipe was successfully deleted from Favorite", '', 2000)
+    }
 
     return (
         <div className="favorite-recipe">
@@ -28,7 +36,7 @@ const PinnedRecipe: React.FC<recipe> = ({ id, title, image }) => {
             </div>
             <div className="favorite-recipe__text">
                 <button
-                    onClick={() => dispatch(removeFromFavorites(id))}
+                    onClick={() => handleDeleteFromFavorite(id)}
                 >
                     <CgClose />
                 </button>

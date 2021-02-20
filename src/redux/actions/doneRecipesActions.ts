@@ -17,7 +17,6 @@ export const removeFromDone = (id: number) => (dispatch: Dispatch<DoneRecipesDis
             id
         }
     })
-
     localStorage.setItem("doneRecipes", JSON.stringify(getState().doneRecipes.done_recipes));
 }
 

@@ -19,15 +19,14 @@ import IngredientsList from '../../components/ingredientsList/IngredientsList'
 import RecipePreparation from '../../components/recipePreparation/RecipePreparation'
 import SimiliarRecipes from '../../components/similiarRecipes/SimiliarRecipes'
 
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
-
 import './SingleRecipe.css'
 
 import { RiPushpinLine } from 'react-icons/ri'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { ImCheckmark2 } from 'react-icons/im'
 
+//@ts-ignore
+import { NotificationManager } from 'react-notifications';
 
 type SingleRecipeParams = {
     id: string
@@ -117,31 +116,31 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                 case "pin":
                     const isInPinned = pinned_recipes.find(item => item.id === single_recipe_item.id)
                     if (isInPinned) {
-                        toast.error("This recipe is already in Pinned.")
+                        NotificationManager.error("This recipe is already in Pinned", '', 2000)
                     }
                     else {
                         dispatch(addToPinned(single_recipe_item))
-                        toast.success("Recipe added to Pinned.")
+                        NotificationManager.success("Recipe was successfully added to Pinned", '', 2000)
                     }
                     break;
                 case 'done':
                     const isInDone = done_recipes.find(item => item.id === single_recipe_item.id)
                     if (isInDone) {
-                        toast.error("This recipe is already in Completed.")
+                        NotificationManager.error("This recipe is already in Completed", '', 2000)
                     }
                     else {
                         dispatch(addToDone(single_recipe_item))
-                        toast.success("Recipe added to Completed.")
+                        NotificationManager.success("Recipe was successfully added to Completed", '', 2000)
                     }
                     break;
                 case 'favorite':
                     const isInFavorite = favorite_recipes.find(item => item.id === single_recipe_item.id)
                     if (isInFavorite) {
-                        toast.error("This recipe is already in Favorite.")
+                        NotificationManager.error("This recipe is already in Favorite", '', 2000)
                     }
                     else {
                         dispatch(addToFavorites(single_recipe_item))
-                        toast.success("Recipe added to Favorite.")
+                        NotificationManager.success("Recipe was successfully added to Favorite", '', 2000)
                     }
                     break;
             }
@@ -153,16 +152,6 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
 
             {recipe_loaded && single_recipe ?
                 <>
-                    <ToastContainer
-                        position="top-right"
-                        autoClose={2000}
-                        hideProgressBar={true}
-                        newestOnTop={false}
-                        closeOnClick
-                        rtl={false}
-                        draggable
-                        pauseOnHover
-                    />
                     <div className="single-recipe__header">
                         <img className="header__image" src={single_recipe.image} alt={single_recipe.title} />
                         <div className="header__frame">
