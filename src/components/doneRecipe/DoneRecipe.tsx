@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
@@ -21,34 +21,33 @@ import { NotificationManager } from 'react-notifications'
 
 const DoneRecipe: React.FC<recipe> = ({ id, title, image }) => {
 
-    const single_recipe = useSelector((state: RootStore) => state.singleRecipe.single_recipe)
     const favorite_recipes = useSelector((state: RootStore) => state.favoriteRecipes.favorite_recipes)
 
     const dispatch = useDispatch()
 
+    const [singleRecipeItem, setSingleRecipeItem] = useState({
+        id,
+        title,
+        image
+    })
+
     const handleActionButtons = (type: string) => {
-        if (single_recipe) {
-            const single_recipe_item = {
-                id: single_recipe.id,
-                title: single_recipe.title,
-                image: single_recipe.image
-            }
-            switch (type) {
-                case 'remove-from-completed':
-                    dispatch(removeFromDone(single_recipe_item.id))
-                    NotificationManager.success("Recipe was successfully deleted from Completed", '', 2000)
-                    break;
-                case 'favorite':
-                    const isInFavorite = favorite_recipes.find(item => item.id === single_recipe_item.id)
-                    if (isInFavorite) {
-                        NotificationManager.error("This recipe is already in Favorite", '', 2000)
-                    }
-                    else {
-                        dispatch(addToFavorites(single_recipe_item))
-                        NotificationManager.success("Recipe was successfully added to Favorite", '', 2000)
-                    }
-                    break;
-            }
+
+        switch (type) {
+            case 'remove-from-completed':
+                dispatch(removeFromDone(id))
+                NotificationManager.success("Recipe was successfully deleted from Completed", '', 2000)
+                break;
+            case 'favorite':
+                const isInFavorite = favorite_recipes.find(item => item.id === id)
+                if (isInFavorite) {
+                    NotificationManager.error("This recipe is already in Favorite", '', 2000)
+                }
+                else {
+                    dispatch(addToFavorites(singleRecipeItem))
+                    NotificationManager.success("Recipe was successfully added to Favorite", '', 2000)
+                }
+                break;
         }
     }
 

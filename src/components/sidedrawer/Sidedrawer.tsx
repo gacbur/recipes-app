@@ -24,7 +24,7 @@ const Sidedrawer: FC<SidedrawerProps> = ({ show, setShow }) => {
             <ul>
                 <li><Link to="/" onClick={() => setShow(false)}>FIND RECIPES!</Link></li>
                 <li><Link to="/pinned" onClick={() => setShow(false)}>PINNED</Link></li>
-                <li><Link to="/done" onClick={() => setShow(false)}>DONE</Link></li>
+                <li><Link to="/done" onClick={() => setShow(false)}>COMPLETED</Link></li>
                 <li><Link to="/favorites" onClick={() => setShow(false)}>FAVORITES</Link></li>
             </ul>
             <div className="sidedrawer__socials">

@@ -91,7 +91,7 @@
   font-size: 60px;
 }
 
-@media all and (max-width: 825px) {
+@media all and (max-width: 830px) {
   .search__form {
     width: 85%;
     padding: 1.5em;

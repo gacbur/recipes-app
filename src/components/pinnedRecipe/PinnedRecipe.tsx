@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Link } from 'react-router-dom'
 
@@ -25,49 +25,48 @@ import { NotificationManager } from 'react-notifications';
 
 const PinnedRecipe: React.FC<recipe> = ({ id, title, image }) => {
 
-
     const dispatch = useDispatch()
 
-    const single_recipe = useSelector((state: RootStore) => state.singleRecipe.single_recipe)
+    const [singleRecipeItem, setSingleRecipeItem] = useState({
+        id,
+        title,
+        image
+    })
 
     const done_recipes = useSelector((state: RootStore) => state.doneRecipes.done_recipes)
     const favorite_recipes = useSelector((state: RootStore) => state.favoriteRecipes.favorite_recipes)
 
     const handleActionButtons = (type: string) => {
-        if (single_recipe) {
-            const single_recipe_item = {
-                id: single_recipe.id,
-                title: single_recipe.title,
-                image: single_recipe.image
-            }
-            switch (type) {
-                case 'remove-from-pinned':
-                    dispatch(removeFromPinned(single_recipe_item.id))
-                    NotificationManager.success("Recipe was successfully deleted from Pinned", '', 2000)
-                    break;
-                case 'done':
-                    const isInDone = done_recipes.find(item => item.id === single_recipe_item.id)
-                    if (isInDone) {
-                        NotificationManager.error("This recipe is already in Completed", '', 2000)
-                    }
-                    else {
-                        dispatch(addToDone(single_recipe_item))
-                        dispatch(removeFromPinned(single_recipe_item.id))
-                        NotificationManager.success("Recipe was successfully added to Completed", '', 2000)
-                    }
-                    break;
-                case 'favorite':
-                    const isInFavorite = favorite_recipes.find(item => item.id === single_recipe_item.id)
-                    if (isInFavorite) {
-                        NotificationManager.error("This recipe is already in Favorite", '', 2000)
-                    }
-                    else {
-                        dispatch(addToFavorites(single_recipe_item))
-                        dispatch(removeFromPinned(single_recipe_item.id))
-                        NotificationManager.success("Recipe was successfully added to Favorite", '', 2000)
-                    }
-                    break;
-            }
+
+        console.log('click')
+
+        switch (type) {
+            case 'remove-from-pinned':
+                dispatch(removeFromPinned(id))
+                NotificationManager.success("Recipe was successfully deleted from Pinned", '', 2000)
+                break;
+            case 'done':
+                const isInDone = done_recipes.find(item => item.id === id)
+                if (isInDone) {
+                    NotificationManager.error("This recipe is already in Completed", '', 2000)
+                }
+                else {
+                    dispatch(addToDone(singleRecipeItem))
+                    dispatch(removeFromPinned(id))
+                    NotificationManager.success("Recipe was successfully added to Completed", '', 2000)
+                }
+                break;
+            case 'favorite':
+                const isInFavorite = favorite_recipes.find(item => item.id === id)
+                if (isInFavorite) {
+                    NotificationManager.error("This recipe is already in Favorite", '', 2000)
+                }
+                else {
+                    dispatch(addToFavorites(singleRecipeItem))
+                    dispatch(removeFromPinned(id))
+                    NotificationManager.success("Recipe was successfully added to Favorite", '', 2000)
+                }
+                break;
         }
     }
 

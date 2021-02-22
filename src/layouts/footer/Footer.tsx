@@ -17,7 +17,7 @@ const Footer = () => {
                 <div className="footer__cnt__right">
                     <div className="footer__cnt__right__navs">
                         <li><Link to="/pinned" >PINNED</Link></li>
-                        <li><Link to="/done" >DONE</Link></li>
+                        <li><Link to="/done" >COMPLETED</Link></li>
                         <li><Link to="/favorites" >FAVORITES</Link></li>
                     </div>
                     <div className="footer__cnt__right__socials">

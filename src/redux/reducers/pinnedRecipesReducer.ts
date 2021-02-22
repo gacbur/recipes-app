@@ -15,7 +15,6 @@ const pinnedRecipesReducer = (state: InitialStateI = initialState, action: Pinne
                 pinned_recipes: [...state.pinned_recipes, action.payload]
             }
         case REMOVE_FROM_PINNED:
-            console.log(action.payload.id)
             const temp_pinned_recipes = state.pinned_recipes.filter(item => item.id !== action.payload.id)
             return {
                 pinned_recipes: temp_pinned_recipes

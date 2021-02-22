@@ -11,13 +11,9 @@ import PageNotFound from '../../pages/pageNotFound/PageNotFound'
 
 import './Main.css'
 
-// @ts-ignore
-import { NotificationContainer } from 'react-notifications';
-
 const Main = () => {
     return (
         <div className="main">
-            <NotificationContainer />
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/pinned" exact component={Pinned} />

@@ -6,13 +6,19 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 import Store from './redux/Store'
 
+//@ts-ignore
+import { NotificationContainer } from 'react-notifications'
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={Store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+  <>
+    <NotificationContainer />
+    <React.StrictMode>
+      <Provider store={Store}>
+        <App />
+      </Provider>
+    </React.StrictMode>
+  </>,
   document.getElementById('root')
 );
 

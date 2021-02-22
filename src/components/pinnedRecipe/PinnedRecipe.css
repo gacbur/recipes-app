@@ -126,8 +126,8 @@
 
 @media all and (max-width: 660px) {
   .pinned-recipe {
-    width: 330px;
-    height: 350px;
+    width: 280px;
+    height: 340px;
   }
   .pinned-recipe__text button {
     margin: 0em .4em;

@@ -125,7 +125,7 @@
   }
 }
 
-@media all and (max-width: 550px) {
+@media all and (max-width: 650px) {
   .footer__cnt__left {
     margin: 2em 0em 2em 0em;
   }
@@ -134,7 +134,7 @@
   }
 }
 
-@media all and (max-width: 468px) {
+@media all and (max-width: 568px) {
   .footer__cnt {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

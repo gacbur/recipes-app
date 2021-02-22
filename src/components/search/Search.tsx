@@ -8,12 +8,23 @@ import { getRecipes, recipesLoaded, recipesNotLoaded } from '../../redux/actions
 
 import { FaSearch } from 'react-icons/fa'
 
+//@ts-ignore
+import { scroller } from "react-scroll";
+
 import './Search.css'
 
 const Search = () => {
     const [searchValue, setSearchValue] = useState("")
     const [searchEmpty, setSearchEmpty] = useState(false)
     const dispatch = useDispatch()
+
+    const scrollToSection = () => {
+        scroller.scrollTo("recipes-list", {
+            duration: 600,
+            delay: 0,
+            smooth: "easeInOutQuark",
+        })
+    }
 
     const handleSubmit = (searchValue: string, e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -32,6 +43,7 @@ const Search = () => {
             .then(recipes => {
                 dispatch(getRecipes(recipes))
                 dispatch(recipesLoaded())
+                scrollToSection()
             })
             .catch(err => {
                 console.log(err)

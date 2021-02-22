@@ -60,7 +60,7 @@
 
         h3{
            margin-left: 3em; 
-           font-size: 15px;
+           font-size: 16px;
            line-height: 1.7em;
            margin-right: auto;
            padding-left:4em;
@@ -76,23 +76,36 @@
         background-color: $second-color;
         margin-left: 1%;
         outline: 3px solid white;
-        outline-offset: -15px;
+        outline-offset: -14px;
   
         div{
-            padding:1.5em 2em;
+            padding:1em 1.2em;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             background-color: $first-color;
             width: 220px;
+            min-height: 200px;
             text-align: center;
             outline: 1px solid $third-color;
-            outline-offset: -15px;
+            outline-offset: -13px;
 
             h2, h3, h4{
                 font-family: $font-two;
-                line-height: 1.5em;
+                line-height: 1.4em;
+            }
+
+            h2{
+                font-size: 21px;
+            }
+
+            h3{
+                font-size: 17px;
+            }
+
+            h4{
+                font-size: 15px;
             }
         }  
         
@@ -132,6 +145,49 @@
        .header__image{
             width:100%;
        }
+    }
+
+}
+
+.single-recipe-error{
+    font-family: $font-two;
+    margin-top:4em;
+
+    &__button{
+        width:100%;
+        margin-bottom: 3em;
+
+        button{
+            cursor: pointer;
+            margin-left: 15%;
+            display: flex;
+            padding:.2em 1em;
+            font-size: 34px;
+            border: 4px solid $third-color;
+            background-color: white;
+            transition: .25s;
+
+            &:hover{
+                background-color: $third-color;
+                color: white;
+                transition: .25s;
+            }
+        }
+    }
+
+    &__text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3{
+            margin-bottom: .5em;
+            font-size: 28px;
+        }
+
+        h4{
+            font-size: 23px;
+        }
     }
 
 }

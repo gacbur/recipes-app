@@ -97,7 +97,7 @@
 
 .single-recipe__content h3 {
   margin-left: 3em;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7em;
   margin-right: auto;
   padding-left: 4em;
@@ -121,11 +121,11 @@
   background-color: #2e2c2c;
   margin-left: 1%;
   outline: 3px solid white;
-  outline-offset: -15px;
+  outline-offset: -14px;
 }
 
 .single-recipe .header__frame div {
-  padding: 1.5em 2em;
+  padding: 1em 1.2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -141,14 +141,27 @@
           justify-content: center;
   background-color: #ffffff;
   width: 220px;
+  min-height: 200px;
   text-align: center;
   outline: 1px solid #fc8618;
-  outline-offset: -15px;
+  outline-offset: -13px;
 }
 
 .single-recipe .header__frame div h2, .single-recipe .header__frame div h3, .single-recipe .header__frame div h4 {
   font-family: "Source Serif Pro", serif;
-  line-height: 1.5em;
+  line-height: 1.4em;
+}
+
+.single-recipe .header__frame div h2 {
+  font-size: 21px;
+}
+
+.single-recipe .header__frame div h3 {
+  font-size: 17px;
+}
+
+.single-recipe .header__frame div h4 {
+  font-size: 15px;
 }
 
 .single-recipe .header__image {
@@ -179,5 +192,58 @@
   .single-recipe .header__image {
     width: 100%;
   }
+}
+
+.single-recipe-error {
+  font-family: "Source Serif Pro", serif;
+  margin-top: 4em;
+}
+
+.single-recipe-error__button {
+  width: 100%;
+  margin-bottom: 3em;
+}
+
+.single-recipe-error__button button {
+  cursor: pointer;
+  margin-left: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: .2em 1em;
+  font-size: 34px;
+  border: 4px solid #fc8618;
+  background-color: white;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.single-recipe-error__button button:hover {
+  background-color: #fc8618;
+  color: white;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.single-recipe-error__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.single-recipe-error__text h3 {
+  margin-bottom: .5em;
+  font-size: 28px;
+}
+
+.single-recipe-error__text h4 {
+  font-size: 23px;
 }
 /*# sourceMappingURL=SingleRecipe.css.map */

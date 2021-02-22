@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 
+import { useHistory } from "react-router-dom";
+
 import Axios from 'axios'
 
 import { RouteComponentProps, withRouter } from 'react-router';
@@ -24,6 +26,7 @@ import './SingleRecipe.css'
 import { RiPushpinLine } from 'react-icons/ri'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { ImCheckmark2 } from 'react-icons/im'
+import { HiArrowNarrowLeft } from 'react-icons/hi'
 
 //@ts-ignore
 import { NotificationManager } from 'react-notifications';
@@ -38,7 +41,11 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
 
     const dispatch = useDispatch()
 
+    let history = useHistory();
+
     const id = match.params.id
+
+    const [renderErrorPage, setRenderErrorPage] = useState(false)
 
     useEffect(() => {
 
@@ -87,11 +94,15 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                             }
                         })
                     }
+                    setRenderErrorPage(false)
                     dispatch(getSingleRecipe(singleRecipe))
                     dispatch(singleRecipeLoaded())
+                    console.log('good')
                 })
                 .catch(err => {
                     dispatch(SingleRecipeNotLoaded())
+                    setRenderErrorPage(true)
+                    console.log('bad')
                     console.log(err)
                 })
         }
@@ -148,44 +159,62 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
     }
 
     return (
-        <div className="single-recipe">
+        <>
+            {renderErrorPage ?
+                <div className="single-recipe-error">
+                    <div className="single-recipe-error__button">
+                        <button
+                            onClick={() => history.goBack()}
+                        >
+                            <HiArrowNarrowLeft />
+                        </button>
+                    </div>
+                    <div className="single-recipe-error__text">
+                        <h3>Missing information</h3>
+                        <h4>This recipe has missing recipe informations, Sorry! </h4>
+                    </div>
 
-            {recipe_loaded && single_recipe ?
-                <>
-                    <div className="single-recipe__header">
-                        <img className="header__image" src={single_recipe.image} alt={single_recipe.title} />
-                        <div className="header__frame">
-                            <div>
-                                <h2>{single_recipe.title}</h2>
-                                <h4>By</h4>
-                                <h3>{single_recipe.author}</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="single-recipe__actions">
-                        <button
-                            onClick={() => handleActionButtons('pin')}
-                        ><RiPushpinLine /></button>
-                        <button
-                            onClick={() => handleActionButtons('favorite')}
-                        ><AiOutlineHeart /></button>
-                        <button
-                            onClick={() => handleActionButtons('done')}
-                        ><ImCheckmark2 /></button>
-                    </div>
-                    <div className="single-recipe__content">
-                        <h3>Time: {single_recipe.readyInMinutes} minutes</h3>
-                        <h3>Servings: {single_recipe.servings}</h3>
-                        <h3>Vegan: {single_recipe.vegan ? 'Yes' : 'No'}</h3>
-                        <h3>Vegetarian: {single_recipe.vegetarian ? 'Yes' : 'No'}</h3>
-                        <IngredientsList />
-                        <RecipePreparation />
-                        <SimiliarRecipes singleRecipeID={id} />
-                    </div>
-                </>
+                </div>
                 :
-                <Loading />}
-        </div>
+                <div className="single-recipe">
+                    {recipe_loaded && single_recipe ?
+                        <>
+                            <div className="single-recipe__header">
+                                <img className="header__image" src={single_recipe.image} alt={single_recipe.title} />
+                                <div className="header__frame">
+                                    <div>
+                                        <h2>{single_recipe.title}</h2>
+                                        <h4>By</h4>
+                                        <h3>{single_recipe.author}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="single-recipe__actions">
+                                <button
+                                    onClick={() => handleActionButtons('pin')}
+                                ><RiPushpinLine /></button>
+                                <button
+                                    onClick={() => handleActionButtons('favorite')}
+                                ><AiOutlineHeart /></button>
+                                <button
+                                    onClick={() => handleActionButtons('done')}
+                                ><ImCheckmark2 /></button>
+                            </div>
+                            <div className="single-recipe__content">
+                                <h3>Time: {single_recipe.readyInMinutes} minutes</h3>
+                                <h3>Servings: {single_recipe.servings}</h3>
+                                <h3>Vegan: {single_recipe.vegan ? 'Yes' : 'No'}</h3>
+                                <h3>Vegetarian: {single_recipe.vegetarian ? 'Yes' : 'No'}</h3>
+                                {/* <IngredientsList />
+                                <RecipePreparation />
+                                <SimiliarRecipes singleRecipeID={id} /> */}
+                            </div>
+                        </>
+                        :
+                        <Loading />}
+                </div>
+            }
+        </>
     )
 }
 
