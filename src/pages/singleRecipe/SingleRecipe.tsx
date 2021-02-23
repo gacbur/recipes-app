@@ -54,7 +54,6 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
             Axios.get(`${process.env.REACT_APP_API_URL}/recipes/${id}/information?analyzedInstructions=false&apiKey=${process.env.REACT_APP_API_KEY}`)
                 .then(result => result.data)
                 .then(data => {
-                    console.log(data)
                     const singleRecipe: singleRecipe = {
                         id: data.id,
                         title: data.title,
@@ -66,6 +65,7 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                         vegan: data.vegan,
                         vegetarian: data.vegetarian,
                         instructions: data.analyzedInstructions[0].steps.map((item: instructionsStep) => {
+
                             return {
                                 number: item.number,
                                 step: item.step,
@@ -97,12 +97,10 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                     setRenderErrorPage(false)
                     dispatch(getSingleRecipe(singleRecipe))
                     dispatch(singleRecipeLoaded())
-                    console.log('good')
                 })
                 .catch(err => {
                     dispatch(SingleRecipeNotLoaded())
                     setRenderErrorPage(true)
-                    console.log('bad')
                     console.log(err)
                 })
         }
@@ -205,9 +203,9 @@ const SingleRecipe: React.FC<SingleRecipeProps> = ({ match }) => {
                                 <h3>Servings: {single_recipe.servings}</h3>
                                 <h3>Vegan: {single_recipe.vegan ? 'Yes' : 'No'}</h3>
                                 <h3>Vegetarian: {single_recipe.vegetarian ? 'Yes' : 'No'}</h3>
-                                {/* <IngredientsList />
+                                <IngredientsList />
                                 <RecipePreparation />
-                                <SimiliarRecipes singleRecipeID={id} /> */}
+                                <SimiliarRecipes singleRecipeID={id} />
                             </div>
                         </>
                         :

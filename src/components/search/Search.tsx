@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Axios from 'axios'
 
@@ -13,10 +13,24 @@ import { scroller } from "react-scroll";
 
 import './Search.css'
 
+
 const Search = () => {
     const [searchValue, setSearchValue] = useState("")
     const [searchEmpty, setSearchEmpty] = useState(false)
+
+    const [backgroundImage, setBackgroundImage] = useState('meat-grill')
+
     const dispatch = useDispatch()
+
+    const backgrounds = ['meat-grill', 'pancakes', 'pizza', 'barbecue-wings']
+
+    useEffect(() => {
+        const randomizeBackground = () => {
+            const index = Math.floor(Math.random() * backgrounds.length)
+            setBackgroundImage(backgrounds[index])
+        }
+        randomizeBackground()
+    }, [])
 
     const scrollToSection = () => {
         scroller.scrollTo("recipes-list", {
@@ -52,7 +66,7 @@ const Search = () => {
     }
 
     return (
-        <div className="search">
+        <div className="search" style={{ backgroundImage: `url(/${backgroundImage}.jpg)` }}>
             <div className="search__form">
                 <h1>Find a Recipe</h1>
                 <form onSubmit={(e) => handleSubmit(searchValue, e)}>

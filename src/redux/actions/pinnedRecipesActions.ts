@@ -12,17 +12,12 @@ export const addToPinned = (recipe: recipe) => (dispatch: Dispatch<PinnedRecipes
 
 export const removeFromPinned = (id: number) => (dispatch: Dispatch<PinnedRecipesDispatchTypes>, getState: any) => {
 
-
-    console.log('usuwam' + id)
-
     dispatch({
         type: REMOVE_FROM_PINNED,
         payload: {
             id: id
         }
     })
-
-
 
     localStorage.setItem("pinnedRecipes", JSON.stringify(getState().pinnedRecipes.pinned_recipes));
 }

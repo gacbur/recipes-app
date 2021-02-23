@@ -23,7 +23,6 @@ const SimiliarRecipes: React.FC<SimiliarRecipesProps> = ({ singleRecipeID }) => 
     const dispatch = useDispatch()
 
     const similiar_recipes_loaded = useSelector((state: RootStore) => state.similiarRecipes.similiar_recipes_loaded)
-    const similiar_recipes_failed = useSelector((state: RootStore) => state.similiarRecipes.similiar_recipes_failed)
     const similiar_recipes = useSelector((state: RootStore) => state.similiarRecipes.similiar_recipes)
 
     useEffect(() => {
@@ -38,7 +37,6 @@ const SimiliarRecipes: React.FC<SimiliarRecipesProps> = ({ singleRecipeID }) => 
                         }
                     })
                 ]
-                console.log(similiarRecipes)
                 dispatch(getSimiliarRecipes(similiarRecipes))
                 dispatch(similiarRecipesLoaded())
             })

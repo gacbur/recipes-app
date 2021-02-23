@@ -4,16 +4,18 @@ import { useSelector } from 'react-redux'
 
 import { RootStore } from '../../redux/Store'
 
+import { ingredientItemInfo } from '../../redux/actions/singleRecipeActionTypes'
+
 import './ingredientsList.css'
 
 import IngredientItem from '../ingredientItem/IngredientItem'
+
 
 const IngredientsList = () => {
 
     const [measuresType, setMeasuresType] = useState<string>('metric')
     const single_recipe = useSelector((state: RootStore) => state.singleRecipe.single_recipe)
 
-    console.log(single_recipe?.ingredientsInfo)
 
     return (
         <div className='ingredients-list'>
@@ -25,9 +27,9 @@ const IngredientsList = () => {
                 <option value="us">us</option>
             </select>
             <div className="ingredients-list__content">
-                {single_recipe && single_recipe?.ingredientsInfo.map(item => (
+                {single_recipe && single_recipe?.ingredientsInfo.map((item, index) => (
                     <IngredientItem
-                        key={item.name}
+                        key={index}
                         image={item.image}
                         name={item.name}
                         measureUS_amount={item.measureUS_amount}

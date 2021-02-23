@@ -23,7 +23,7 @@ const Navbar: FC<NavbarProps> = ({ setShow }) => {
                     <i><GiHamburgerMenu /></i></button>
             </div>
             <div className="navbar__logo-cnt">
-                <Link to="/">foodies</Link>
+                <Link to="/" onClick={() => setShow(false)}>foodies</Link>
             </div>
             <div className="navbar__socials-cnt">
                 <h5>Follow us</h5>

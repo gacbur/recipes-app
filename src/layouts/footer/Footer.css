@@ -116,7 +116,7 @@
   color: #f59a45;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 800px) {
   .footer__cnt__left {
     margin: 2em 0em 2em 2em;
   }
