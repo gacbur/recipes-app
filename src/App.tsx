@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-
 import Navbar from '../src/layouts/navbar/Navbar'
 import Main from '../src/layouts/main/Main'
-import Sidedrawer from './components/sidedrawer/Sidedrawer'
 import Footer from './layouts/footer/Footer'
+
+import ScrollToTop from './components/scrollToTop/ScrollToTop'
 
 import { BrowserRouter as Router } from 'react-router-dom'
 
@@ -11,15 +10,13 @@ import './App.css';
 
 function App() {
 
-  const [show, setShow] = useState(false)
-
   return (
     <div className="app">
       <Router>
+        <ScrollToTop />
         <div className="app__content">
-          <Navbar setShow={setShow} />
+          <Navbar />
           <Main />
-          <Sidedrawer show={show} setShow={setShow} />
         </div>
         <Footer />
       </Router>

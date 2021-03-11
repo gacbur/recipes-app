@@ -136,4 +136,123 @@
     display: none;
   }
 }
+
+.sidedrawer {
+  position: fixed;
+  font-family: "Roboto", sans-serif;
+  z-index: 1000;
+  background-color: #2e2c2c;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  width: 250px;
+  padding: 2em 0em;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: .5s;
+  transition: .5s;
+  visibility: hidden;
+  -webkit-box-shadow: 0 2px 13px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 2px 13px rgba(0, 0, 0, 0.7);
+}
+
+.sidedrawer button {
+  margin-left: 2em;
+  background-color: #2e2c2c;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  cursor: pointer;
+}
+
+.sidedrawer button i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 38px;
+}
+
+.sidedrawer button i :hover {
+  color: lightgrey;
+}
+
+.sidedrawer ul {
+  margin: 3em 0em;
+}
+
+.sidedrawer ul li {
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: .4em 0em;
+  font-weight: 600;
+  margin: .5em 0em;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.sidedrawer ul li :hover {
+  color: #fc8618;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.sidedrawer ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.sidedrawer__socials h4 {
+  margin: 1.8em 0em;
+  color: white;
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+}
+
+.sidedrawer__socials__links {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sidedrawer__socials__links a {
+  text-decoration: none;
+  color: #fc8618;
+  font-size: 39px;
+  margin: 0em .3em;
+}
+
+.sidedrawer__socials__links a :hover {
+  color: #f59a45;
+}
+
+.sidedrawer.show {
+  visibility: visible;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: .5s;
+  transition: .5s;
+  width: 350px;
+}
 /*# sourceMappingURL=Navbar.css.map */
