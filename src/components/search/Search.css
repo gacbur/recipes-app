@@ -27,7 +27,7 @@
       -ms-flex-align: center;
           align-items: center;
   background-color: rgba(255, 253, 253, 0.7);
-  padding: 2.5em;
+  padding: 4em 2em;
   width: 50%;
 }
 
@@ -83,11 +83,10 @@
 
 .search__form h1 {
   color: #2e2c2c;
-  letter-spacing: 3.5px;
   font-family: "Source Serif Pro", serif;
   margin-bottom: .5em;
   font-weight: 900;
-  font-size: 60px;
+  font-size: 48px;
 }
 
 @media all and (max-width: 830px) {

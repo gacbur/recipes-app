@@ -173,7 +173,7 @@
   width: 50%;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 950px) {
   .single-recipe__header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

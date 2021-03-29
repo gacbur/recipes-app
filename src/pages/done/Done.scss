@@ -14,6 +14,10 @@
         padding-bottom:1em;
         font-family: $font-two;
         border-bottom: 1px solid darkgray;
+
+        @media all and(max-width:430px){
+            font-size:16px;
+        }
     }
 
     &__content{
@@ -26,6 +30,10 @@
 
     &__message{
         font-family: $font-two;
+
+        @media all and(max-width:430px){
+            font-size:14px;
+        }
     }
 }
 

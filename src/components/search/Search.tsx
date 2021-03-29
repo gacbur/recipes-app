@@ -52,7 +52,7 @@ const Search = () => {
 
     const getSearchResults = (searchValue: string) => {
         dispatch(recipesNotLoaded())
-        Axios.get(`${process.env.REACT_APP_API_URL}/recipes/complexSearch?query=${searchValue}&apiKey=${process.env.REACT_APP_API_KEY}`)
+        Axios.get(`${process.env.REACT_APP_API_URL}/recipes/complexSearch?number=16&query=${searchValue}&apiKey=${process.env.REACT_APP_API_KEY}`)
             .then(results => results.data.results)
             .then(recipes => {
                 dispatch(getRecipes(recipes))

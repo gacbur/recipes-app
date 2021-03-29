@@ -16,4 +16,4 @@ const RootReducer = combineReducers({
     favoriteRecipes: favoriteRecipesReducer
 });
 
-export default RootReducer
+export default RootReducer;
