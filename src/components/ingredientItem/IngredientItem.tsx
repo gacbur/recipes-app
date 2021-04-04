@@ -17,7 +17,7 @@ const IngredientItem: React.FC<IngredientItemProps> = ({ image, name, measureMet
         <div className="list__content__item" style={{ textAlign: 'center' }}>
             <img src={`${process.env.REACT_APP_RECIPE_INGREDIENT}${image}`} alt={name}></img>
             <h5>{name}</h5>
-            <h4>{measuresType !== "metric" ? measureMetric_amount : measureUS_amount} {measuresType !== "metric" ? measureMetric_unit : measureUS_unit}</h4>
+            <h4>{measuresType !== "metric" ? measureMetric_amount.toFixed(1) : measureUS_amount.toFixed(1)} {measuresType !== "metric" ? measureMetric_unit : measureUS_unit}</h4>
         </div>
     )
 }

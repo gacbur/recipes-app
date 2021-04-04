@@ -170,6 +170,7 @@
   position: relative;
   outline: 3px solid white;
   outline-offset: -15px;
+  min-height: 300px;
   width: 50%;
 }
 
