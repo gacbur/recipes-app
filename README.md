@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# foodies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+![foodies1](https://user-images.githubusercontent.com/46655309/114459037-48207b80-9be0-11eb-818c-b6b7565261a4.JPG)
+![foodies2](https://user-images.githubusercontent.com/46655309/114459039-4951a880-9be0-11eb-8e25-645ea7dbec23.JPG)
+![foodies3](https://user-images.githubusercontent.com/46655309/114459040-4a82d580-9be0-11eb-8044-43da3656e8c8.JPG)
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+------------------------------------------------------------------------------------------------------------------------------
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![foodies4](https://user-images.githubusercontent.com/46655309/114459041-4a82d580-9be0-11eb-92e1-fb1a2221b70b.JPG)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Description
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+foodies allows you to search for recipes for various foods, each recipe has a description of the preparation as well as an inventory of the necessary ingredients. Recipes can be pinned and marked as favorites and completed. If a recipe has similar recipes, a section will be included at the bottom of the page and will recommend them.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### My intentions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I've created this app to make viewing recipes information and preparation enjoyable and easy.
 
-### `npm run eject`
+#### Tools
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Typescript
+- Sass
+- Html
+- Redux
+- Material-UI
+- spoonacular api
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## How To Use
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+#### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. git clone (github repo link)
+2. npm install 
